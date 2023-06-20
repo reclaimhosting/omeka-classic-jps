@@ -3,7 +3,7 @@ id: omeka-classic
 name: Omeka Classic
 homepage: https://omeka.org/classic/
 baseUrl: https://raw.githubusercontent.com/reclaimhosting/omeka-classic-jps/master
-logo: logo.png
+logo: omeka-classic-logo.png
 
 description: 
   text: Omeka Classic is a web publishing platform for sharing digital collections and creating media-rich online exhibits. 
@@ -26,7 +26,6 @@ onInstall:
   - deployArchive
   - createDb
   - configApp
-  - initInstall
 
 actions:
   deployArchive:
@@ -44,7 +43,7 @@ actions:
       sed -i 's|username = "XXXXXXX"|username = "root"|g' /var/www/webroot/ROOT/db.ini;
       sed -i 's|password = "XXXXXXX"|password = "${nodes.mysql.password}"|g' /var/www/webroot/ROOT/db.ini;
       sed -i 's|dbname   = "XXXXXXX"|dbname   = "${globals.DB_NAME}"|g' /var/www/webroot/ROOT/db.ini;
-      sed -i 's|host     = "XXXXXXX"|host     = "${nodes.cp.master.intIP}"|g' /var/www/webroot/ROOT/db.ini;
+      sed -i 's|host     = "XXXXXXX"|host     = "${nodes.mysql.master.intIP}"|g' /var/www/webroot/ROOT/db.ini;
       
 ssl: true
 skipNodeEmails: true
