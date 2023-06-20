@@ -40,6 +40,7 @@ actions:
       cd /var/www/webroot/ROOT
       wget https://github.com/omeka/Omeka/releases/download/v$LATEST/omeka-$LATEST.zip 
       unzip omeka-$LATEST.zip
+      mv omeka-$LATEST/* .
       mv omeka-$LATEST/*.* .
       rm omeka-$LATEST.zip
       rm -r omeka-$LATEST/
