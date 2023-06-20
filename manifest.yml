@@ -41,7 +41,7 @@ actions:
       wget https://github.com/omeka/Omeka/releases/download/v$LATEST/omeka-$LATEST.zip 
       unzip omeka-$LATEST.zip
       mv omeka-$LATEST/* .
-      mv omeka-$LATEST/*.* .
+      mv omeka-$LATEST/.htaccess .
       rm omeka-$LATEST.zip
       rm -r omeka-$LATEST/
       
